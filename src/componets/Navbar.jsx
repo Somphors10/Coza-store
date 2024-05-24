@@ -40,6 +40,7 @@ const Navbar = () => {
                     <Link class="nav-link" aria-current="page" to='/contact'>Contact</Link>
                   </li>
                 </ul>
+
               </div>
             </div>
         </nav>

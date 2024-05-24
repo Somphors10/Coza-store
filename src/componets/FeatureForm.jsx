@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import itemCard4 from '../assets/item-cart-04.jpg'
 import itemCard5 from '../assets/item-cart-05.jpg'
 
@@ -31,20 +32,6 @@ const FeatureForm = () => {
 									<td className="column-4">
 										<div className="di-fresh">
 						
-											<div class="d-flex flex-row">
-												<button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
-												onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-												<i class="fas fa-minus"></i>
-												</button>
-
-												<input id="form1" min="0" name="quantity" value="1" type="number"
-												class="form-control form-control-sm" style={{width: "50px"}} />
-
-												<button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
-												onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-												<i class="fas fa-plus"></i>
-												</button>
-											</div>
 											
 
 										</div>

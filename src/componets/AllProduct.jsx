@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import product1 from '../assets/product-01.jpg'
 import product2 from '../assets/product-02.jpg'
 import product3 from '../assets/product-03.jpg'
@@ -62,7 +63,7 @@ const AllProduct = () => {
             <div className="col-md-4 col-lg-4">
                 <p>
                     <button className="btn btn-color" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      filter
+                      Filter
                     </button>
                 </p>
                 
@@ -79,39 +80,39 @@ const AllProduct = () => {
         
                                     <ul className="mar-r-10">
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link ">
+                                            <Link href="#" className="filter-link ">
                                                 Default
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link ">
+                                            <Link href="#" className="filter-link ">
                                                 Popularity
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 Average rating
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link filter-link-active">
+                                            <Link href="#" className="filter-link filter-link-active">
                                                 Newness
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link ">
+                                            <Link href="#" className="filter-link ">
                                                 Price: Low to High
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link ">
+                                            <Link href="#" className="filter-link ">
                                                 Price: High to Low
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -124,39 +125,39 @@ const AllProduct = () => {
         
                                     <ul className="mar-r-10">
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link filter-link-active">
+                                            <Link href="#" className="filter-link filter-link-active">
                                                 All
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 $0.00 - $50.00
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 $50.00 - $100.00
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 $100.00 - $150.00
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 $150.00 - $200.00
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 $200.00+
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -173,9 +174,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 Black
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
@@ -183,9 +184,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link filter-link-active">
+                                            <Link href="#" className="filter-link filter-link-active">
                                                 Blue
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
@@ -193,9 +194,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 Grey
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
@@ -203,9 +204,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link ">
+                                            <Link href="#" className="filter-link ">
                                                 Green
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
@@ -213,9 +214,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 Red
-                                            </a>
+                                            </Link>
                                         </li>
         
                                         <li className="pb-6">
@@ -223,9 +224,9 @@ const AllProduct = () => {
                                                 <i className="fa-regular fa-circle"></i>
                                             </span>
         
-                                            <a href="#" className="filter-link">
+                                            <Link href="#" className="filter-link">
                                                 White
-                                            </a>
+                                            </Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -237,25 +238,25 @@ const AllProduct = () => {
                                     </div>
         
                                     <div className="m-fashion">
-                                        <a href="#" className="s-fashion">
+                                        <Link href="#" className="s-fashion">
                                             Fashion
-                                        </a>
+                                        </Link>
         
-                                        <a href="#" className="s-fashion">
+                                        <Link href="#" className="s-fashion">
                                             Lifestyle
-                                        </a>
+                                        </Link>
         
-                                        <a href="#" className="s-fashion">
+                                        <Link href="#" className="s-fashion">
                                             Denim
-                                        </a>
+                                        </Link>
         
-                                        <a href="#" className="s-fashion">
+                                        <Link href="#" className="s-fashion">
                                             Streetstyle
-                                        </a>
+                                        </Link>
         
-                                        <a href="#" className="s-fashion">
+                                        <Link href="#" className="s-fashion">
                                             Crafts
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -268,7 +269,7 @@ const AllProduct = () => {
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box ">
                     <img src={product1} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -314,28 +315,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt s-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box ">
                     <img src={product2} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -381,28 +385,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt s-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products men1">
                 <div className="x-box ">
                     <img src={product3} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal ---> */}
                         <section>
@@ -448,28 +455,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt s-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box ">
                     <img src={product4} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -515,21 +525,24 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt s-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -538,7 +551,7 @@ const AllProduct = () => {
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product5} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -584,28 +597,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products watchs">
                 <div className="x-box">
                     <img src={product6} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -651,28 +667,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product7} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -718,28 +737,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product8} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -785,21 +807,24 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -808,7 +833,7 @@ const AllProduct = () => {
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products shoes">
                 <div className="x-box">
                     <img src={product9} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -854,28 +879,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product10} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -921,28 +949,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products men1">
                 <div className="x-box">
                     <img src={product11} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -988,28 +1019,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products men1">
                 <div className="x-box">
                     <img src={product12} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -1055,21 +1089,24 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -1078,7 +1115,7 @@ const AllProduct = () => {
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product13} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -1124,28 +1161,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All- Women1">
                 <div className="x-box">
                     <img src={product14} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -1191,28 +1231,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products watchs">
                 <div className="x-box">
                     <img src={product15} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -1258,28 +1301,31 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
             <div className="col-sm-6 col-md-4 col-lg-3 box All-Products Women1">
                 <div className="x-box">
                     <img src={product16} alt=""/>
-                    <a href="#" className="caption">
+                    <Link href="#" className="caption">
                         <span className="bor "  data-bs-toggle="modal" data-bs-target="#exampleModal">Quick View</span>
                         {/* <!-- Modal --> */}
                         <section>
@@ -1325,27 +1371,30 @@ const AllProduct = () => {
                               </div>
                             </div>
                         </section>
-                    </a>
+                    </Link>
                 </div>
                 <div className="block2-txt fs-shirt">
                     <div className="block2-txt-child1 flex-col-l ">
-                        <a href="" className="shirt">
+                        <Link href="" className="shirt">
                             Esprit Ruffle Shirt
-                        </a>
+                        </Link>
                         <span className="price">
                             $16.64
                         </span>
                     </div>
                     <div className="s-icon1">
-                        <a href="#" className="a-icon">
-                            <i className="fa-regular fa-heart"></i>
-                        </a>
+                        <Link href="#" className="a-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                            </svg>
+
+                        </Link>
                     </div>
                 </div>
             </div>
         </div>
         <div className="load text-center">
-            <a href="#" className="a-load">load more</a>
+            <Link href="#" className="a-load">load more</Link>
         </div>
     </div>
 </section>

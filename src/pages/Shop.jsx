@@ -10,8 +10,6 @@ const Shop = () => {
     <div>
       <Navbar/>
       <AllProduct/>
-      <OurBlog/>
-      <CategoryProduct/>
       <Footer/>
     </div>
   )
