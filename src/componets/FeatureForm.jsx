@@ -1,176 +1,189 @@
-import React from 'react'
-import { useState } from 'react'
-import itemCard4 from '../assets/item-cart-04.jpg'
-import itemCard5 from '../assets/item-cart-05.jpg'
+import React, { useMemo, useState } from "react";
+import itemCard4 from "../assets/item-cart-04.jpg";
+import itemCard5 from "../assets/item-cart-05.jpg";
+
+const initialItems = [
+	{
+		id: 1,
+		name: "Fresh Strawberries",
+		price: 36,
+		qty: 1,
+		image: itemCard4,
+	},
+	{
+		id: 2,
+		name: "Lightweight Jacket",
+		price: 16,
+		qty: 1,
+		image: itemCard5,
+	},
+];
 
 const FeatureForm = () => {
+	const [items, setItems] = useState(initialItems);
+	const [coupon, setCoupon] = useState("");
+	const [country, setCountry] = useState("");
+	const [state, setState] = useState("");
+	const [zip, setZip] = useState("");
 
-  return (
-    <form className="feature"> 
-		<div className="container">
-			<div className="row">
-				<div className="col-lg-10 col-xl-7 m-feature">
-					<div className="s-feature lr-media">
-						<div className="wrap-feature">
-							<table className="table-shopping-cart">
-								<tbody><tr className="table_head">
-									<th className="column-1">Product</th>
-									<th className="column-2"></th>
-									<th className="column-3">Price</th>
-									<th className="column-4">Quantity</th>
-									<th className="column-5">Total</th>
-								</tr>
+	const updateQty = (id, type) => {
+		setItems((prev) =>
+			prev.map((item) =>
+				item.id === id
+					? {
+						...item,
+						qty: type === "inc" ? item.qty + 1 : Math.max(1, item.qty - 1),
+					}
+					: item
+			)
+		);
+	};
 
-								<tr className="table_row">
-									<td className="column-1">
-										<div className="how-itemcart1">
-											<img src={itemCard4} alt=""/>
-										</div>
-									</td>
-									<td className="column-2">Fresh Strawberries</td>
-									<td className="column-3">$ 36.00</td>
-									<td className="column-4">
-										<div className="di-fresh">
-						
-											
+	const setQtyDirect = (id, value) => {
+		const numeric = Math.max(1, Number(value) || 1);
+		setItems((prev) => prev.map((item) => (item.id === id ? { ...item, qty: numeric } : item)));
+	};
 
-										</div>
-									</td>
-									<td className="column-5">$ 36.00</td>
-								</tr>
+	const subtotal = useMemo(
+		() => items.reduce((sum, item) => sum + item.price * item.qty, 0),
+		[items]
+	);
 
-								<tr className="table_row">
-									<td className="column-1">
-										<div className="how-itemcart1">
-											<img src={itemCard5} alt="IMG"/>
-										</div>
-									</td>
-									<td className="column-2">Lightweight Jacket</td>
-									<td className="column-3">$ 16.00</td>
-									<td className="column-4">
-										<div className="di-fresh">
-											<div className="di2-fresh">
-												<i className="fa-solid fa-minus"></i>
-											</div>
+	const shipping = subtotal > 70 ? 0 : 5.99;
+	const total = subtotal + shipping;
 
-											<input className="in-val" type="number" name="num-product2" value="1"/>
+	return (
+		<section className="feature feature-modern">
+			<div className="container">
+				<div className="row g-4">
+					<div className="col-lg-8">
+						<div className="feature-card">
+							<div className="feature-card-header">
+								<h4 className="feature-title">Shopping Cart</h4>
+							</div>
 
-											<div className="di-val">
-												<i className="fa-solid fa-plus"></i>
-											</div>
-										</div>
-									</td>
-									<td className="column-5">$ 16.00</td>
-								</tr>
-							</tbody></table>
-						</div>
+							<div className="table-responsive">
+								<table className="table table-modern align-middle mb-0">
+									<thead>
+										<tr>
+											<th>Product</th>
+											<th>Price</th>
+											<th>Quantity</th>
+											<th className="text-end">Total</th>
+										</tr>
+									</thead>
+									<tbody>
+										{items.map((item) => (
+											<tr key={item.id}>
+												<td>
+													<div className="product-cell">
+														<img src={item.image} alt={item.name} className="product-thumb" />
+														<span>{item.name}</span>
+													</div>
+												</td>
+												<td>${item.price.toFixed(2)}</td>
+												<td>
+													<div className="qty-control">
+														<button type="button" onClick={() => updateQty(item.id, "dec")}>
+															<i className="fa-solid fa-minus"></i>
+														</button>
+														<input
+															type="number"
+															min="1"
+															value={item.qty}
+															onChange={(e) => setQtyDirect(item.id, e.target.value)}
+														/>
+														<button type="button" onClick={() => updateQty(item.id, "inc")}>
+															<i className="fa-solid fa-plus"></i>
+														</button>
+													</div>
+												</td>
+												<td className="text-end fw-semibold">
+													${(item.price * item.qty).toFixed(2)}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
 
-						<div className="apply-di  p-lr-15-sm">
-							<div className="row">
-								<div className="col">
-									<div className="apply-coupon">
-										<input className="type-in" type="text" name="coupon" placeholder="Coupon Code"/>
-									</div>
-								</div>
-								<div className="col">
-									<div className="di-coupon">Apply coupon</div>
-								</div>
-								<div className="col">
-									<div className="di-coupon">
-										Update Cart
-									</div>
-								</div>
+							<div className="feature-actions">
+								<input
+									type="text"
+									className="feature-input"
+									placeholder="Coupon code"
+									value={coupon}
+									onChange={(e) => setCoupon(e.target.value)}
+								/>
+								<button type="button" className="btn-soft">
+									Apply Coupon
+								</button>
+								<button type="button" className="btn-soft">
+									Update Cart
+								</button>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div className="col-sm-10 col-lg-7 col-xl-5 cart-total ">
-					<div className="m-cart-total p-lr-15 m-lr-0">
-						<h4 className="s-cart-total">
-							Cart Totals
-						</h4>
+					<div className="col-lg-4">
+						<div className="feature-card summary-card">
+							<h4 className="feature-title mb-3">Cart Totals</h4>
 
-						<div className="m-subtotal">
-							<div className="s-subtotal">
-								<span className="sp-subtotal">
-									Subtotal:
-								</span>
+							<div className="summary-row">
+								<span>Subtotal</span>
+								<strong>${subtotal.toFixed(2)}</strong>
 							</div>
 
-							<div className="price-subtotal">
-								<span className="sp-subtotal">
-									$79.65
-								</span>
+							<div className="summary-row">
+								<span>Shipping</span>
+								<strong>{shipping === 0 ? "Free" : `$${shipping.toFixed(2)}`}</strong>
 							</div>
+
+							<hr />
+
+							<div className="summary-row total-row">
+								<span>Total</span>
+								<strong>${total.toFixed(2)}</strong>
+							</div>
+
+							<p className="shipping-note">Calculate Shipping</p>
+
+							<select
+								className="feature-input"
+								value={country}
+								onChange={(e) => setCountry(e.target.value)}
+							>
+								<option value="">Select a country...</option>
+								<option value="USA">USA</option>
+								<option value="UK">UK</option>
+								<option value="Canada">Canada</option>
+							</select>
+
+							<input
+								className="feature-input"
+								type="text"
+								placeholder="State / Country"
+								value={state}
+								onChange={(e) => setState(e.target.value)}
+							/>
+
+							<input
+								className="feature-input"
+								type="text"
+								placeholder="Postcode / ZIP"
+								value={zip}
+								onChange={(e) => setZip(e.target.value)}
+							/>
+
+							<button type="button" className="btn-primary-feature">
+								Proceed to Checkout
+							</button>
 						</div>
-
-						<div className="m-shipping">
-							<div className="s-shipping w-full-ssm">
-								<span className="sp-subtotal">
-									Shipping:
-								</span>
-							</div>
-
-							<div className="fea-caption w-full-ssm p-r-0-sm">
-								<p className="sub-caption">
-									There are no shipping methods available. Please double check your address, or contact us if you need any help.
-								</p>
-								
-								<div className="pt-15">
-									<span className="calcu-shipp">
-										Calculate Shipping
-									</span>
-
-									<div className="di-select rs1-select2 rs2-select2">
-										<select className="js-select2 select2-hidden-accessible" name="time" tabindex="-1" aria-hidden="true"/>
-											<option>Select a country...</option>
-											<option>USA</option>
-											<option>UK</option>
-										<div className="dropDownSelect2"></div>
-									</div>
-
-									<div className="in-state">
-										<input className="state-type" type="text" name="state" placeholder="State /  country"/>
-									</div>
-
-									<div className="in-state">
-										<input className="state-type" type="text" name="postcode" placeholder="Postcode / Zip"/>
-									</div>
-									
-									<div className="flex-w">
-										<div className="up-total">
-											Update Totals
-										</div>
-									</div>
-										
-								</div>
-							</div>
-						</div>
-
-						<div className="pro-tol">
-							<div className="size-208">
-								<span className="sp-text">
-									Total:
-								</span>
-							</div>
-
-							<div className="size-text">
-								<span className="font-text">
-									$79.65
-								</span>
-							</div>
-						</div>
-
-						<button className="button-checkout">
-							Proceed to Checkout
-						</button>
 					</div>
 				</div>
 			</div>
-		</div>
-	</form> 
-  )
-}
+		</section>
+	);
+};
 
-export default FeatureForm
+export default FeatureForm;

@@ -1,85 +1,84 @@
-import React from 'react'
+import React from "react";
 
 const ContactFile = () => {
-  return (
-    <section className="contact">
-		<div className="container">
-			<div className="m-contact">
-				<div className="s-contact con1-media con2-media">
-					<form></form>
-						<h4 className="suam">
-							Send Us A Message
-						</h4>
+	return (
+		<section className="contact contact-modern">
+			<div className="container">
+				<div className="row g-4 align-items-stretch">
+					{/* Contact Form */}
+					<div className="col-lg-7">
+						<div className="contact-card contact-form-card h-100">
+							<h4 className="contact-title">Send Us A Message</h4>
 
-						<div className="i-contact">
-							<input className="in-contact" type="text" name="email" placeholder="Your Email Address"/>
-							<img className="img-contact" src="images/icons/icon-email.png" alt=""/>
-						</div>
+							<form className="contact-form-ui">
+								<div className="contact-input-wrap">
+									<i className="fa-regular fa-envelope contact-input-icon"></i>
+									<input
+										className="contact-input"
+										type="email"
+										name="email"
+										placeholder="Your Email Address"
+									/>
+								</div>
 
-						<div className="text-contact">
-							<textarea className="help-contact" name="msg" placeholder="How Can We Help?"></textarea>
-						</div>
+								<div className="contact-input-wrap textarea-wrap">
+									<i className="fa-regular fa-comment contact-input-icon"></i>
+									<textarea
+										className="contact-textarea"
+										name="message"
+										placeholder="How can we help?"
+										rows="6"
+									></textarea>
+								</div>
 
-						<button className="submit">
-							Submit
-						</button>
-					<form/>
-				</div>
-
-				<div className="address con1-media con2-media">
-					<div className="m-address">
-						<span className="s-address">
-							<span className="sp-address"></span>
-						</span>
-
-						<div className="d-address">
-							<span className="m1-address"><i className="fa-solid fa-location-dot"></i>
-								Address
-							</span>
-
-							<p className="p-address">
-								Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
-							</p>
+								<button type="submit" className="contact-submit-btn">
+									Submit
+								</button>
+							</form>
 						</div>
 					</div>
 
-					<div className="m-address">
-						<span className="s-address">
-							<span className="sp-address"></span>
-						</span>
+					{/* Contact Info */}
+					<div className="col-lg-5">
+						<div className="contact-card contact-info-card h-100">
+							<div className="info-item">
+								<div className="info-icon">
+									<i className="fa-solid fa-location-dot"></i>
+								</div>
+								<div>
+									<h5 className="info-title">Address</h5>
+									<p className="info-text">
+										Coza Store Center, 8th floor, 379 Hudson St,
+										New York, NY 10018, US
+									</p>
+								</div>
+							</div>
 
-						<div className="d-talk">
-							<span className="m1-address"><i className="fa-solid fa-phone"></i>
-								Lets Talk
-							</span>
+							<div className="info-item">
+								<div className="info-icon">
+									<i className="fa-solid fa-phone"></i>
+								</div>
+								<div>
+									<h5 className="info-title">Let&apos;s Talk</h5>
+									<p className="info-link">+855 85371346</p>
+								</div>
+							</div>
 
-							<p className="p-talk">
-								+855 85371346
-							</p>
-						</div>
-					</div>
-
-					<div className="m-address">
-						<span className="s-support">
-							<span className="sp-support"></span>
-						</span>
-
-						<div className="d-support">
-							<span className="m1-address"><i className="fa-solid fa-square-envelope"></i>
-								Sale Support
-							</span>
-
-							<p className="p-talk">
-								somphorstae9@gmail.com
-							</p>
+							<div className="info-item">
+								<div className="info-icon">
+									<i className="fa-solid fa-square-envelope"></i>
+								</div>
+								<div>
+									<h5 className="info-title">Sale Support</h5>
+									<p className="info-link">somphorstae9@gmail.com</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		    </div>
-       
-	</section>
-  )
-}
+		</section>
+	);
+};
 
-export default ContactFile
+export default ContactFile;

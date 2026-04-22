@@ -1,435 +1,181 @@
-import React from 'react'
-import blog4 from '../assets/blog-04.jpg'
-import blog5 from '../assets/blog-05.jpg'
-import blog6 from '../assets/blog-06.jpg'
-import productMin1 from '../assets/product-min-01.jpg'
-import productMin2 from '../assets/product-min-02.jpg'
-import productMin3 from '../assets/product-min-03.jpg'
+import React from "react";
+import { Link } from "react-router-dom";
+
+import blog4 from "../assets/blog-04.jpg";
+import blog5 from "../assets/blog-05.jpg";
+import blog6 from "../assets/blog-06.jpg";
+import productMin1 from "../assets/product-min-01.jpg";
+import productMin2 from "../assets/product-min-02.jpg";
+import productMin3 from "../assets/product-min-03.jpg";
+
+const posts = [
+	{
+		id: 1,
+		image: blog4,
+		day: "22",
+		month: "Jan 2018",
+		title: "8 Inspiring Ways to Wear Dresses in the Winter",
+		excerpt:
+			"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius",
+	},
+	{
+		id: 2,
+		image: blog5,
+		day: "18",
+		month: "Jan 2018",
+		title: "The Great Big List of Men's Gifts for the Holidays",
+		excerpt:
+			"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius",
+	},
+	{
+		id: 3,
+		image: blog6,
+		day: "16",
+		month: "Jan 2018",
+		title: "5 Winter-to-Spring Fashion Trends to Try Now",
+		excerpt:
+			"Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius",
+	},
+];
+
+const categories = ["Fashion", "Beauty", "Street Style", "Life Style", "DIY & Crafts"];
+
+const featured = [
+	{ id: 1, img: productMin1, title: "White Shirt With Pleat Detail Back", price: "$19.00" },
+	{ id: 2, img: productMin2, title: "Converse All Star Hi Black Canvas", price: "$39.00" },
+	{ id: 3, img: productMin3, title: "Nixon Porter Leather Watch In Tan", price: "$17.00" },
+];
+
+const archive = [
+	{ label: "July 2018", count: 9 },
+	{ label: "June 2018", count: 39 },
+	{ label: "May 2018", count: 29 },
+	{ label: "April 2018", count: 35 },
+	{ label: "March 2018", count: 22 },
+	{ label: "February 2018", count: 32 },
+	{ label: "January 2018", count: 21 },
+	{ label: "December 2017", count: 26 },
+];
+
+const tags = ["Fashion", "Lifestyle", "Denim", "Streetstyle", "Crafts"];
 
 const BlogBlog = () => {
-  return (
-    <section className="blog">
-		<div className="container">
-			<div className="row">
-				<div className="col-md-8 col-lg-9 m-blog">
-					<div className="s-blog me-blog">
-						{/* <!-- item blog --> */}
-						<div className="c-blog">
-							<a href="../html/detail-blog1.html" className="a1-blog">
-								<div className="img-blog">
-									<img src={blog4} alt=""/>
-								</div>
+	return (
+		<section className="blog-page">
+			<div className="container">
+				<div className="row g-4">
+					<div className="col-lg-9">
+						<div className="blog-feed">
+							{posts.map((p) => (
+								<article key={p.id} className="blog-post-card">
+									<Link to="/detailBlogCard" className="blog-media">
+										<img src={p.image} alt={p.title} />
+										<div className="blog-date-pill">
+											<div className="blog-date-day">{p.day}</div>
+											<div className="blog-date-month">{p.month}</div>
+										</div>
+									</Link>
 
-								<div className="d-blog">
-									<span className="sp1-blog text-center">
-										22
-									</span>
+									<div className="blog-post-body">
+										<h3 className="blog-post-title">
+											<Link to="/detailBlogCard">{p.title}</Link>
+										</h3>
 
-									<span className="sp2-blog text-center">
-										Jan2018
-									</span>
-								</div>
-							</a>
+										<p className="blog-post-excerpt">{p.excerpt}</p>
 
-							<div className="w-blog">
-								<h4 className="i-blog">
-									<a href="" className="a2-blog">
-										8 Inspiring Ways to Wear Dresses in the Winter
-									</a>
-								</h4>
+										<div className="blog-post-footer">
+											<div className="blog-meta">
+												<span>
+													<span className="muted">By</span> Admin
+												</span>
+												<span className="sep">|</span>
+												<span>StreetStyle, Fashion, Couple</span>
+												<span className="sep">|</span>
+												<span>8 Comments</span>
+											</div>
 
-								<p className="p-blog">
-									className aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-								</p>
+											<Link to="/detailBlogCard" className="blog-continue">
+												Continue Reading <span className="arrow">→</span>
+											</Link>
+										</div>
+									</div>
+								</article>
+							))}
 
-								<div className="m-by">
-									<span className="s-by">
-										<span>
-											<span className="color1">By</span> Admin  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											StreetStyle, Fashion, Couple  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											8 Comments
-										</span>
-									</span>
-
-									<a href="#" className="cou-blog">
-										Continue Reading
-
-										<i className="fa fa-long-arrow-right ml-9"></i>
-									</a>
-								</div>
+							<div className="blog-pagination">
+								<a href="#!" className="pg active">1</a>
+								<a href="#!" className="pg">2</a>
 							</div>
-						</div>
-
-						{/* <!-- item blog --> */}
-						<div className="pb-63">
-							<a href="../html/detail-blog1.html" className="a1-blog">
-								<div className="img-blog">
-									<img src={blog5} alt=""/>
-								</div>
-								<div className="d-blog">
-									<span className="sp1-blog text-center">
-										18
-									</span>
-
-									<span className="sp2-blog text-center">
-										Jan2018
-									</span>
-								</div>
-							</a>
-
-							<div className="w-blog">
-								<h4 className="i-blog">
-									<a href="blog-detail.html" className="a2-blog">
-										The Great Big List of Men's Gifts for the Holidays 
-									</a>
-								</h4>
-
-								<p className="p-blog">
-									className aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-								</p>
-
-								<div className="m-by">
-									<span className="s-by">
-										<span>
-											<span className="color1">By</span> Admin  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											StreetStyle, Fashion, Couple  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											8 Comments
-										</span>
-									</span>
-
-									<a href="blog-detail.html" className="cou-blog">
-										Continue Reading
-
-										<i className="fa fa-long-arrow-right ml-9"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						{/* <!-- item blog --> */}
-						<div className="pb-63">
-							<a href="../html/detail-blog1.html" className="a1-blog">
-								<div className="img-blog">
-									<img src={blog6} alt=""/>
-								</div>
-								<div className="d-blog">
-									<span className="sp1-blog text-center">
-										16
-									</span>
-
-									<span className="sp2-blog text-center">
-										Jan2018
-									</span>
-								</div>
-							</a>
-
-							<div className="w-blog">
-								<h4 className="i-blog">
-									<a href="blog-detail.html" className="a2-blog">
-										5 Winter-to-Spring Fashion Trends to Try Now
-									</a>
-								</h4>
-
-								<p className="p-blog">
-									className aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce eget dictum tortor. Donec dictum vitae sapien eu varius
-								</p>
-
-								<div className="m-by">
-									<span className="s-by">
-										<span>
-											<span className="color1">By</span> Admin  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											StreetStyle, Fashion, Couple  
-											<span className="sp-by">|</span>
-										</span>
-
-										<span>
-											8 Comments
-										</span>
-									</span>
-
-									<a href="blog-detail.html" className="cou-blog">
-										Continue Reading
-
-										<i className="fa fa-long-arrow-right ml-9"></i>
-									</a>
-								</div>
-							</div>
-						</div>
-
-						{/* <!-- Pagination --> */}
-						<div className="pagina1">
-							<a href="#" className="pag1 active-pag">
-								1
-							</a>
-
-							<a href="#" className="pag1">
-								2
-							</a>
 						</div>
 					</div>
-				</div>
 
-				<div className="col-md-4 col-lg-3 m-blog">
-					<div className="side-menu">
-						<div className="s-search">
-							<input className="in-search" type="text" name="search" placeholder="Search"/>
-
-							<button className="bu-search">
-								<i className="fa fa-search"></i>
-							</button>
-						</div>
-
-						<div className="pt-55">
-							<h4 className="m-cate">
-								Categories
-							</h4>
-
-							<ul className="mar-r-10">
-								<li className="bor18">
-									<a href="#" className="a-fash">
-										Fashion
-									</a>
-								</li>
-
-								<li className="bor18">
-									<a href="#" className="a-fash">
-										Beauty
-									</a>
-								</li>
-
-								<li className="bor18">
-									<a href="#" className="a-fash">
-										Street Style
-									</a>
-								</li>
-
-								<li className="bor18">
-									<a href="#" className="a-fash">
-										Life Style
-									</a>
-								</li>
-
-								<li className="bor18">
-									<a href="#" className="a-fash">
-										DIY &amp; Crafts
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div className="pt-65">
-							<h4 className="m-cate">
-								Featured Products
-							</h4>
-
-							<ul className="mar-r-10">
-								<li className="li-fea">
-									<a href="#" className="a-fea">
-										<img src={productMin1} alt=""/>
-									</a>
-
-									<div className="di-white">
-										<a href="#" className="a-white">
-											White Shirt With Pleat Detail Back
-										</a>
-										<br/>
-										<span className="s-doll">
-											$19.00
-										</span>
-									</div>
-								</li>
-
-								<li className="li-fea">
-									<a href="#" className="a-fea">
-										<img src={productMin2} alt=""/>
-									</a>
-
-									<div className="di-white">
-										<a href="#" className="a-white">
-											Converse All Star Hi Black Canvas
-										</a>
-										<br/>
-										<span className="s-doll">
-											$39.00
-										</span>
-									</div>
-								</li>
-
-								<li className="li-fea">
-									<a href="#" className="a-fea">
-										<img src={productMin3} alt=""/>
-									</a>
-
-									<div className="di-white">
-										<a href="#" className="a-white">
-											Nixon Porter Leather Watch In Tan
-										</a>
-										<br/>
-										<span className="s-doll">
-											$17.00
-										</span>
-									</div>
-								</li>
-							</ul>
-						</div>
-
-						<div className="pt-55">
-							<h4 className="m-cate">
-								Archive
-							</h4>
-
-							<ul className="mar-r-10">
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											July 2018
-										</span>
-
-										<span>
-											(9)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											June 2018
-										</span>
-
-										<span>
-											(39)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											May 2018
-										</span>
-
-										<span>
-											(29)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											April  2018
-										</span>
-
-										<span>
-											(35)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											March 2018
-										</span>
-
-										<span>
-											(22)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											February 2018
-										</span>
-
-										<span>
-											(32)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											January 2018
-										</span>
-
-										<span>
-											(21)
-										</span>
-									</a>
-								</li>
-
-								<li className="pb-7">
-									<a href="#" className="s-year">
-										<span>
-											December 2017
-										</span>
-
-										<span>
-											(26)
-										</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div className="pt-50">
-							<h4 className="m-cate">
-								Tags
-							</h4>
-
-							<div className="fl-fash">
-								<a href="#" className="a-show">
-									Fashion
-								</a>
-
-								<a href="#" className="a-show">
-									Lifestyle
-								</a>
-
-								<a href="#" className="a-show">
-									Denim
-								</a>
-
-								<a href="#" className="a-show">
-									Streetstyle
-								</a>
-
-								<a href="#" className="a-show">
-									Crafts
-								</a>
+					<div className="col-lg-3">
+						<aside className="blog-sidebar">
+							<div className="sidebar-card">
+								<div className="sidebar-search">
+									<input type="text" placeholder="Search" />
+									<button type="button" aria-label="Search">
+										<i className="fa-solid fa-magnifying-glass"></i>
+									</button>
+								</div>
 							</div>
-						</div>
+
+							<div className="sidebar-card">
+								<h4 className="sidebar-title">Categories</h4>
+								<ul className="sidebar-list">
+									{categories.map((c) => (
+										<li key={c}>
+											<a href="#!">{c}</a>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div className="sidebar-card">
+								<h4 className="sidebar-title">Featured Products</h4>
+								<ul className="featured-list">
+									{featured.map((f) => (
+										<li key={f.id} className="featured-item">
+											<a href="#!" className="featured-thumb">
+												<img src={f.img} alt={f.title} />
+											</a>
+											<div className="featured-text">
+												<a href="#!" className="featured-title">{f.title}</a>
+												<div className="featured-price">{f.price}</div>
+											</div>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div className="sidebar-card">
+								<h4 className="sidebar-title">Archive</h4>
+								<ul className="archive-list">
+									{archive.map((a) => (
+										<li key={a.label}>
+											<a href="#!" className="archive-row">
+												<span>{a.label}</span>
+												<span className="archive-count">({a.count})</span>
+											</a>
+										</li>
+									))}
+								</ul>
+							</div>
+
+							<div className="sidebar-card">
+								<h4 className="sidebar-title">Tags</h4>
+								<div className="tag-cloud">
+									{tags.map((t) => (
+										<a key={t} href="#!" className="tag-pill">{t}</a>
+									))}
+								</div>
+							</div>
+						</aside>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-  )
-}
+		</section>
+	);
+};
 
-export default BlogBlog
+export default BlogBlog;

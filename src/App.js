@@ -27,42 +27,42 @@ import DetailBlogCard from './componets/DetailBlogCard';
 import ContactEnd from './componets/ContactEnd';
 import CategoryProduct from './componets/CategoryProduct';
 import CategoryPro from './componets/CategoryPro';
+import { WishlistProvider } from './componets/WishlistProvider';
 
 function App() {
-  
   return (
-   
-     <BrowserRouter>
-        <Routes path="/" element={<Layout/>}>
+    <WishlistProvider>
+      <BrowserRouter>
+        <Routes path="/" element={<Layout />}>
           <Route index element={<Home1 />} />
-          <Route path="/home1" element={<Home1/>}/>
-          <Route path="/home2" element={<Home2/>}/>
-          <Route path="/home3" element={<Home3/>}/>
-          <Route path="/shop" element={<Shop/>}/>
-          <Route path="/feature" element={<Feature/>}/>
-          <Route path="/blog" element={<Blog/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contact" element={<Contact/>}/>
-          <Route path="/navbar" element={<Navbar/>}/>
-          <Route path="/shopblog" element={<Shopblog/>}/>
-          <Route path="/footer" element={<Footer/>}/>
-          <Route path="/allproduct" element={<AllProduct/>}/>
-          <Route path="/blogblog" element={<BlogBlog/>}/>
-          <Route path="/contactfile" element={<ContactFile/>}/>
-          <Route path="/aboutblog" element={<Aboutblog/>}/>
-          <Route path='/map' element={<Map/>}/>
-          <Route path='/headerBlog' element={<HeaderBlog/>}/>
-          <Route path='/heaerAbout' element={<HeaderAbout/>}/>
-          <Route path='ourBlog' element={<OurBlog/>}/>
-          <Route path='/featureForm' element={<FeatureForm/>}/>
-          <Route path='/detailBlogCard' element={<DetailBlogCard/>}/>
-          <Route path='/contantEnd' element={<ContactEnd/>}/>
-          <Route path='/categoryProduct' element={<CategoryProduct/>}/>
-          <Route path='/categoryPro' element={<CategoryPro/>}/>
+          <Route path="/home1" element={<Home1 />} />
+          <Route path="/home2" element={<Home2 />} />
+          <Route path="/home3" element={<Home3 />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/feature" element={<Feature />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/shopblog" element={<Shopblog />} />
+          <Route path="/footer" element={<Footer />} />
+          <Route path="/allproduct" element={<AllProduct />} />
+          <Route path="/blogblog" element={<BlogBlog />} />
+          <Route path="/contactfile" element={<ContactFile />} />
+          <Route path="/aboutblog" element={<Aboutblog />} />
+          <Route path="/map" element={<Map />} />
+          <Route path="/headerBlog" element={<HeaderBlog />} />
+          <Route path="/heaerAbout" element={<HeaderAbout />} />
+          <Route path="ourBlog" element={<OurBlog />} />
+          <Route path="/featureForm" element={<FeatureForm />} />
+          <Route path="/detailBlogCard" element={<DetailBlogCard />} />
+          <Route path="/contantEnd" element={<ContactEnd />} />
+          <Route path="/categoryProduct" element={<CategoryProduct />} />
+          <Route path="/categoryPro" element={<CategoryPro />} />
         </Routes>
-     </BrowserRouter>
-
-  )
+      </BrowserRouter>
+    </WishlistProvider>
+  );
 }
 
 export default App;

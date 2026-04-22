@@ -7,12 +7,12 @@ import Shopblog from '../componets/Shopblog'
 
 const Home2 = () => {
   return (
-    <div>Home2
-      <Navbar/>
-      <Banner/>
-      <Shopblog/>
-      <OurBlog/>
-      <Footer/>
+    <div>
+      <Navbar />
+      <Banner />
+      <Shopblog />
+      <OurBlog />
+      <Footer />
     </div>
   )
 }
