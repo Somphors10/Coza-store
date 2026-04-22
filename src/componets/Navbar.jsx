@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0 nav-links-wrap">
               <li className="nav-item dropdown">
-                <a
+                <Link
                   className="nav-link dropdown-toggle nav-link-custom"
                   href="#"
                   id="homeDropdown"
@@ -38,7 +38,7 @@ const Navbar = () => {
                   aria-expanded="false"
                 >
                   Home
-                </a>
+                </Link>
                 <ul className="dropdown-menu nav-dropdown" aria-labelledby="homeDropdown">
                   <li><Link className="dropdown-item" to="/home1">Homepage 1</Link></li>
                   <li><Link className="dropdown-item" to="/home2">Homepage 2</Link></li>

@@ -103,8 +103,8 @@ const BlogBlog = () => {
 							))}
 
 							<div className="blog-pagination">
-								<a href="#!" className="pg active">1</a>
-								<a href="#!" className="pg">2</a>
+								<Link href="#!" className="pg active">1</Link>
+								<Link href="#!" className="pg">2</Link>
 							</div>
 						</div>
 					</div>

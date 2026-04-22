@@ -59,8 +59,8 @@ const DetailBlogCard = () => {
 									<div className="detail-tags">
 										<span className="detail-tags-label">Tags</span>
 										<div className="detail-tags-list">
-											<a href="#!" className="tag-chip">Streetstyle</a>
-											<a href="#!" className="tag-chip">Crafts</a>
+											<Link href="#!" className="tag-chip">Streetstyle</Link>
+											<Link href="#!" className="tag-chip">Crafts</Link>
 										</div>
 									</div>
 
@@ -111,7 +111,7 @@ const DetailBlogCard = () => {
 									<ul className="mar-r-10">
 										{["Fashion", "Beauty", "Street Style", "Life Style", "DIY & Crafts"].map((c) => (
 											<li key={c} className="bor18">
-												<a href="#!" className="a-fash">{c}</a>
+												<Link href="#!" className="a-fash">{c}</Link>
 											</li>
 										))}
 									</ul>
@@ -121,29 +121,29 @@ const DetailBlogCard = () => {
 									<h4 className="m-cate">Featured Products</h4>
 									<ul className="mar-r-10">
 										<li className="li-fea">
-											<a href="#!" className="a-fea">
+											<Link href="#!" className="a-fea">
 												<img src={productMin1} alt="" />
-											</a>
+											</Link>
 											<div className="di-white">
-												<a href="#!" className="a-white">White Shirt With Pleat Detail Back</a>
+												<Link href="#!" className="a-white">White Shirt With Pleat Detail Back</Link>
 												<span className="s-doll">$19.00</span>
 											</div>
 										</li>
 										<li className="li-fea">
-											<a href="#!" className="a-fea">
+											<Link href="#!" className="a-fea">
 												<img src={productMin2} alt="" />
-											</a>
+											</Link>
 											<div className="di-white">
-												<a href="#!" className="a-white">Converse All Star Hi Black Canvas</a>
+												<Link href="#!" className="a-white">Converse All Star Hi Black Canvas</Link>
 												<span className="s-doll">$39.00</span>
 											</div>
 										</li>
 										<li className="li-fea">
-											<a href="#!" className="a-fea">
+											<Link href="#!" className="a-fea">
 												<img src={productMin3} alt="" />
-											</a>
+											</Link>
 											<div className="di-white">
-												<a href="#!" className="a-white">Nixon Porter Leather Watch In Tan</a>
+												<Link href="#!" className="a-white">Nixon Porter Leather Watch In Tan</Link>
 												<span className="s-doll">$17.00</span>
 											</div>
 										</li>

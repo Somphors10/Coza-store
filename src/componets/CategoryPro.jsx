@@ -4,6 +4,7 @@ import banner2 from '../assets/banner-02.jpg'
 import banner7 from '../assets/banner-07.jpg'
 import banner8 from '../assets/banner-08.jpg'
 import banner9 from '../assets/banner-09.jpg'
+import { Link } from 'react-router-dom'
 
 
 const CategoryPro = () => {
@@ -14,10 +15,10 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-6">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner1} alt=""/>
-                        <a href="#" className="ws-18">
+                        <Link href="#" className="ws-18">
                             <span className="women">Women</span><br/>
                             <span className="spring">Spring 2018</span>
-                        </a>
+                        </Link>
                         <div className="card-hover">
                             <div className="m-shop">
                                 <div className="shop">
@@ -30,10 +31,10 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-6">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner2} alt=""/>
-                        <a href="#" className="ws-18">
+                        <Link href="#" className="ws-18">
                             <span className="women">Men</span><br/>
                             <span className="spring">Spring 2018</span>
-                        </a>
+                        </Link>
                         <div className="card-hover">
                             <div className="m-shop">
                                 <div className="shop">

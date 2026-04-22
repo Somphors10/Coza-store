@@ -47,9 +47,9 @@ const OurBlog = () => {
                         </div>
 
                         <h4 class="pb-12">
-                            <a href="../html/detail-blog2.html" class="a-in">
+                            <Link href="../html/detail-blog2.html" class="a-in">
                                 8 Inspiring Ways to Wear Dresses in the Winter
-                            </a>
+                            </Link>
                         </h4>
 
                         <p class="p-dis">
@@ -90,11 +90,11 @@ const OurBlog = () => {
                             </span>
                         </div>
 
-                        <h4 class="pb-12">
-                            <a href="#" class="a-in">
-                                The Great Big List of Men's Gifts for the Holidays
-                            </a>
-                        </h4>
+                              <h4 className="pb-12">
+                                  <Link to="/detailBlogCard" className="a-in">
+                                      The Great Big List of Men&apos;s Gifts for the Holidays
+                                  </Link>
+                              </h4>
 
                         <p class="p-dis">
                             Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit ame
@@ -135,9 +135,9 @@ const OurBlog = () => {
                         </div>
 
                         <h4 class="pb-12">
-                            <a href="#" class="a-in">
+                            <Link href="#" class="a-in">
                                 5 Winter-to-Spring Fashion Trends to Try Now
-                            </a>
+                            </Link>
                         </h4>
 
                         <p class="p-dis">

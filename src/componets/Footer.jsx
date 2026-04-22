@@ -4,6 +4,7 @@ import iconpay2 from '../assets/icon-pay-02.png'
 import iconpay3 from '../assets/icon-pay-03.png'
 import iconpay4 from '../assets/icon-pay-04.png'
 import iconpay5 from '../assets/icon-pay-05.png'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -17,27 +18,27 @@ const Footer = () => {
 
                 <ul  className="mar-r-10">
                     <li className="pb-10">
-                        <a href="#" className="w-footer">
+                        <Link href="#" className="w-footer">
                             Women
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="w-footer">
+                        <Link href="#" className="w-footer">
                             Men
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="w-footer">
+                        <Link href="#" className="w-footer">
                             Shoes
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="w-footer">
+                        <Link href="#" className="w-footer">
                             Watches
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -49,27 +50,27 @@ const Footer = () => {
 
                 <ul  className="mar-r-10">
                     <li className="pb-10">
-                        <a href="#" className="t-footer">
+                        <Link href="#" className="t-footer">
                             Track Order
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="t-footer">
+                        <Link href="#" className="t-footer">
                             Returns 
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="t-footer">
+                        <Link href="#" className="t-footer">
                             Shipping
-                        </a>
+                        </Link>
                     </li>
 
                     <li className="pb-10">
-                        <a href="#" className="t-footer">
+                        <Link href="#" className="t-footer">
                             FAQs
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -84,17 +85,17 @@ const Footer = () => {
                 </p>
 
                 <div className="pt-20">
-                    <a href="#" className="fab">
+                    <Link href="#" className="fab">
                         <i className="fa-brands fa-facebook-f"></i>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="fab">
+                    <Link href="#" className="fab">
                         <i className="fa-brands fa-instagram"></i>
-                    </a>
+                    </Link>
 
-                    <a href="#" className="fab">
+                    <Link href="#" className="fab">
                         <i className="fa-brands fa-pinterest-p"></i>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -120,33 +121,33 @@ const Footer = () => {
 
         <div className="p-t-40 ">
             <div className="flex-c-m flex-w p-b-18 text-center">
-                <a href="#" className="m-all-1">
+                <Link href="#" className="m-all-1">
                     <img src={iconpay1} alt=""/>
-                </a>
+                </Link>
 
-                <a href="#" className="m-all-1">
+                <Link href="#" className="m-all-1">
                     <img src={iconpay2} alt=""/>
-                </a>
+                </Link>
 
-                <a href="#" className="m-all-1">
+                <Link href="#" className="m-all-1">
                     <img src={iconpay3} alt=""/>
-                </a>
+                </Link>
 
-                <a href="#" className="m-all-1">
+                <Link href="#" className="m-all-1">
                     <img src={iconpay4} alt=""/>
-                </a>
+                </Link>
 
-                <a href="#" className="m-all-1">
+                <Link href="#" className="m-all-1">
                     <img src={iconpay5} alt=""/>
-                </a>
+                </Link>
             </div>
 
             <p className="copy text-center">
-                Copyright ©<script>document.write(new Date().getFullYear());</script>2024 All rights reserved | Made with <i className="fa-regular fa-heart"></i>by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                Copyright ©<script>document.write(new Date().getFullYear());</script>2024 All rights reserved | Made with <i className="fa-regular fa-heart"></i>by <Link href="https://colorlib.com" target="_blank">Colorlib</Link> &amp; distributed by <Link href="https://themewagon.com" target="_blank">ThemeWagon</Link>
             </p>
         </div>
     </div>
-          <a id="scrollUp" href="#top" aria-label="Back to top">
+          <Link id="scrollUp" href="#top" aria-label="Back to top">
               <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -157,7 +158,7 @@ const Footer = () => {
               >
                   <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
               </svg>
-          </a>
+          </Link>
     </footer>
   )
 }
