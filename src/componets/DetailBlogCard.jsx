@@ -1,163 +1,267 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import blog4 from "../assets/blog-04.jpg";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { getBlogPostById } from "../data/blogPosts";
 import productMin1 from "../assets/product-min-01.jpg";
 import productMin2 from "../assets/product-min-02.jpg";
 import productMin3 from "../assets/product-min-03.jpg";
-import Footer from "./Footer";
+
+const FEATURED_SIDEBAR = [
+  { id: 1, img: productMin1, title: "White Shirt With Pleat Detail Back", price: "$19.00" },
+  { id: 2, img: productMin2, title: "Converse All Star Hi Black Canvas", price: "$39.00" },
+  { id: 3, img: productMin3, title: "Nixon Porter Leather Watch In Tan", price: "$17.00" },
+];
+
+const CATEGORIES = ["Fashion", "Beauty", "Street Style", "Life Style", "DIY & Crafts"];
 
 const DetailBlogCard = () => {
-	return (
-		<>
-			<section className="blog-hero">
-				<div className="container">
-					<div className="blog-hero-inner">
-						<h1 className="blog-hero-title">Blog</h1>
-					</div>
-				</div>
-			</section>
+  const { postId } = useParams();
+  const post = useMemo(() => getBlogPostById(postId), [postId]);
 
-			<section className="blog blog-detail">
-				<div className="container">
-					<div className="row g-4">
-						<div className="col-lg-9">
-							<article className="detail-article">
-								<div className="detail-media">
-									<img src={blog4} alt="Blog cover" />
-									<div className="detail-date">
-										<div className="day">22</div>
-										<div className="month">Jan 2018</div>
-									</div>
-								</div>
+  const [progress, setProgress] = useState(0);
+  const [copied, setCopied] = useState(false);
 
-								<div className="detail-body">
-									<div className="detail-meta">
-										<span>
-											<span className="muted">By</span> Admin
-										</span>
-										<span className="sep">|</span>
-										<span>StreetStyle, Fashion, Couple</span>
-										<span className="sep">|</span>
-										<span>8 Comments</span>
-									</div>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [postId]);
 
-									<h2 className="detail-title">
-										8 Inspiring Ways to Wear Dresses in the Winter
-									</h2>
+  useEffect(() => {
+    if (!post) return;
+    const prev = document.title;
+    document.title = `${post.title} · Coza Store`;
+    return () => {
+      document.title = prev;
+    };
+  }, [post]);
 
-									<div className="detail-content">
-										<p>
-											Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus
-											sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum.
-										</p>
-										<p>
-											Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit
-											amet suscipit in, mattis imperdiet enim.
-										</p>
-									</div>
+  useEffect(() => {
+    if (!post) return;
+    const onScroll = () => {
+      const el = document.documentElement;
+      const scrollable = el.scrollHeight - el.clientHeight;
+      const p = scrollable > 0 ? (el.scrollTop / scrollable) * 100 : 0;
+      setProgress(Math.min(100, Math.max(0, p)));
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [post]);
 
-									<div className="detail-tags">
-										<span className="detail-tags-label">Tags</span>
-										<div className="detail-tags-list">
-											<Link href="#!" className="tag-chip">Streetstyle</Link>
-											<Link href="#!" className="tag-chip">Crafts</Link>
-										</div>
-									</div>
+  const copyLink = useCallback(() => {
+    const url = window.location.href;
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(url).then(() => {
+        setCopied(true);
+        window.setTimeout(() => setCopied(false), 2000);
+      });
+    }
+  }, []);
 
-									<div className="detail-comments">
-										<h3 className="detail-comments-title">Leave a Comment</h3>
-										<p className="detail-comments-note">
-											Your email address will not be published. Required fields are marked *
-										</p>
+  if (!post) {
+    return (
+      <>
+        <Navbar />
+        <div className="bpost-missing">
+          <div className="container bpost-missing__inner">
+            <p className="bpost-missing__eyebrow">Blog</p>
+            <h1 className="bpost-missing__title">Article not found</h1>
+            <p className="bpost-missing__text">
+              This post may have moved. Head back to the blog listing to keep reading.
+            </p>
+            <Link to="/blog" className="bpost-missing__btn">
+              Back to blog
+            </Link>
+          </div>
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
-										<form className="detail-form">
-											<textarea className="detail-textarea" placeholder="Comment..." />
+  const dateObj = new Date(`${post.dateISO}T12:00:00`);
+  const dayNum = String(dateObj.getDate());
+  const monthLine = dateObj.toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
 
-											<div className="detail-grid">
-												<input className="detail-input" type="text" placeholder="Name *" />
-												<input className="detail-input" type="email" placeholder="Email *" />
-											</div>
+  return (
+    <>
+      <div
+        className="bpost-read-progress"
+        style={{ transform: `scaleX(${progress / 100})` }}
+        aria-hidden="true"
+      />
+      <Navbar />
+      <main id="main-article" className="bpost">
+        <header className="bpost-hero">
+          <div className="bpost-hero__media">
+            <img src={post.image} alt="" />
+            <div className="bpost-hero__scrim" aria-hidden="true" />
+          </div>
+          <div className="container bpost-hero__wrap">
+            <nav className="bpost-breadcrumb" aria-label="Breadcrumb">
+              <Link to="/home1">Home</Link>
+              <span aria-hidden="true">/</span>
+              <Link to="/blog">Blog</Link>
+              <span aria-hidden="true">/</span>
+              <span className="is-current">Article</span>
+            </nav>
+            <div className="bpost-hero__date" aria-label="Published date">
+              <span className="bpost-hero__date-day">{dayNum}</span>
+              <span className="bpost-hero__date-month">{monthLine}</span>
+            </div>
+            <h1 className="bpost-hero__title">{post.title}</h1>
+            <div className="bpost-hero__meta">
+              <span className="bpost-pill">
+                <i className="fa-regular fa-user" aria-hidden="true" />
+                {post.author}
+              </span>
+              <span className="bpost-pill">
+                <i className="fa-regular fa-clock" aria-hidden="true" />
+                {post.readMinutes} min read
+              </span>
+              <button type="button" className="bpost-copy" onClick={copyLink}>
+                <i className="fa-solid fa-link" aria-hidden="true" />
+                {copied ? "Copied" : "Copy link"}
+              </button>
+            </div>
+          </div>
+        </header>
 
-											<input className="detail-input" type="text" placeholder="Website" />
+        <div className="bpost-layout">
+          <div className="container">
+            <div className="row g-4 g-xl-5">
+              <div className="col-lg-8">
+                <article className="bpost-article">
+                  <p className="bpost-lead">{post.excerpt}</p>
+                  <div className="bpost-prose">
+                    {post.paragraphs.map((text, i) => (
+                      <p key={i}>{text}</p>
+                    ))}
+                  </div>
 
-											<button type="button" className="detail-submit">
-												Post Comment
-											</button>
-										</form>
-									</div>
+                  <div className="bpost-tags">
+                    <span className="bpost-tags__label">Tags</span>
+                    <div className="bpost-tags__list">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="bpost-tag">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
-									<div className="detail-back">
-										<Link to="/blog" className="detail-back-link">
-											← Back to blog
-										</Link>
-									</div>
-								</div>
-							</article>
-						</div>
+                  <section className="bpost-comments" aria-labelledby="comments-heading">
+                    <h2 id="comments-heading" className="bpost-comments__title">
+                      Leave a comment
+                    </h2>
+                    <p className="bpost-comments__note">
+                      Your email will not be published. Fields marked * are required.
+                    </p>
+                    <form className="bpost-form" onSubmit={(e) => e.preventDefault()}>
+                      <label className="bpost-label" htmlFor="bpost-comment">
+                        Comment *
+                      </label>
+                      <textarea
+                        id="bpost-comment"
+                        className="bpost-input bpost-input--textarea"
+                        placeholder="Share your thoughts…"
+                        rows={5}
+                        required
+                      />
 
-						<div className="col-lg-3">
-							<aside className="detail-sidebar">
-								<div className="sidebar-card">
-									<div className="s-search">
-										<input className="in-search" type="text" placeholder="Search" />
-										<button className="bu-search" type="button" aria-label="Search">
-											<i className="fa-solid fa-magnifying-glass"></i>
-										</button>
-									</div>
-								</div>
+                      <div className="bpost-form__grid">
+                        <div>
+                          <label className="bpost-label" htmlFor="bpost-name">
+                            Name *
+                          </label>
+                          <input id="bpost-name" className="bpost-input" type="text" required />
+                        </div>
+                        <div>
+                          <label className="bpost-label" htmlFor="bpost-email">
+                            Email *
+                          </label>
+                          <input id="bpost-email" className="bpost-input" type="email" required />
+                        </div>
+                      </div>
 
-								<div className="sidebar-card">
-									<h4 className="m-cate">Categories</h4>
-									<ul className="mar-r-10">
-										{["Fashion", "Beauty", "Street Style", "Life Style", "DIY & Crafts"].map((c) => (
-											<li key={c} className="bor18">
-												<Link href="#!" className="a-fash">{c}</Link>
-											</li>
-										))}
-									</ul>
-								</div>
+                      <label className="bpost-label" htmlFor="bpost-web">
+                        Website <span className="bpost-optional">(optional)</span>
+                      </label>
+                      <input id="bpost-web" className="bpost-input" type="url" placeholder="https://" />
 
-								<div className="sidebar-card">
-									<h4 className="m-cate">Featured Products</h4>
-									<ul className="mar-r-10">
-										<li className="li-fea">
-											<Link href="#!" className="a-fea">
-												<img src={productMin1} alt="" />
-											</Link>
-											<div className="di-white">
-												<Link href="#!" className="a-white">White Shirt With Pleat Detail Back</Link>
-												<span className="s-doll">$19.00</span>
-											</div>
-										</li>
-										<li className="li-fea">
-											<Link href="#!" className="a-fea">
-												<img src={productMin2} alt="" />
-											</Link>
-											<div className="di-white">
-												<Link href="#!" className="a-white">Converse All Star Hi Black Canvas</Link>
-												<span className="s-doll">$39.00</span>
-											</div>
-										</li>
-										<li className="li-fea">
-											<Link href="#!" className="a-fea">
-												<img src={productMin3} alt="" />
-											</Link>
-											<div className="di-white">
-												<Link href="#!" className="a-white">Nixon Porter Leather Watch In Tan</Link>
-												<span className="s-doll">$17.00</span>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</aside>
-						</div>
-					</div>
-				</div>
-			</section>
+                      <button type="submit" className="bpost-submit">
+                        Post comment
+                      </button>
+                    </form>
+                  </section>
 
-			<Footer />
-		</>
-	);
+                  <div className="bpost-back">
+                    <Link to="/blog" className="bpost-back__link">
+                      <i className="fa-solid fa-arrow-left-long" aria-hidden="true" />
+                      Back to all articles
+                    </Link>
+                  </div>
+                </article>
+              </div>
+
+              <div className="col-lg-4">
+                <aside className="bpost-aside">
+                  <div className="bpost-aside-card">
+                    <h3 className="bpost-aside__title">Search</h3>
+                    <div className="bpost-aside-search">
+                      <label className="visually-hidden" htmlFor="bpost-aside-q">
+                        Search blog
+                      </label>
+                      <input id="bpost-aside-q" type="search" placeholder="Search articles…" />
+                      <button type="button" aria-label="Search">
+                        <i className="fa-solid fa-magnifying-glass" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="bpost-aside-card">
+                    <h3 className="bpost-aside__title">Categories</h3>
+                    <ul className="bpost-aside-list">
+                      {CATEGORIES.map((c) => (
+                        <li key={c}>
+                          <button type="button" className="bpost-aside-link">
+                            {c}
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bpost-aside-card">
+                    <h3 className="bpost-aside__title">Featured products</h3>
+                    <ul className="bpost-aside-featured">
+                      {FEATURED_SIDEBAR.map((f) => (
+                        <li key={f.id}>
+                          <Link to="/shop" className="bpost-aside-thumb">
+                            <img src={f.img} alt="" />
+                          </Link>
+                          <div>
+                            <Link to="/shop" className="bpost-aside-product">
+                              {f.title}
+                            </Link>
+                            <div className="bpost-aside-price">{f.price}</div>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
 };
 
 export default DetailBlogCard;

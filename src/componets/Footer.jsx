@@ -1,166 +1,110 @@
-import React from 'react'
-import iconpay1 from '../assets/icon-pay-01.png'
-import iconpay2 from '../assets/icon-pay-02.png'
-import iconpay3 from '../assets/icon-pay-03.png'
-import iconpay4 from '../assets/icon-pay-04.png'
-import iconpay5 from '../assets/icon-pay-05.png'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
+import iconpay1 from "../assets/icon-pay-01.png";
+import iconpay2 from "../assets/icon-pay-02.png";
+import iconpay3 from "../assets/icon-pay-03.png";
+import iconpay4 from "../assets/icon-pay-04.png";
+import iconpay5 from "../assets/icon-pay-05.png";
+
+const scrollPageToTop = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  const root = document.getElementById("root");
+  if (root) root.scrollTop = 0;
+};
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="footer">
-    <div className="container">
-        <div className="row">
-            <div className="col-sm-6 col-lg-3 m-footer">
-                <h4 className="s-footer ">
-                    Categories
-                </h4>
-
-                <ul  className="mar-r-10">
-                    <li className="pb-10">
-                        <Link href="#" className="w-footer">
-                            Women
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="w-footer">
-                            Men
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="w-footer">
-                            Shoes
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="w-footer">
-                            Watches
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-
-            <div className="col-sm-6 col-lg-3 m-footer">
-                <h4 className="s-footer ">
-                    Help
-                </h4>
-
-                <ul  className="mar-r-10">
-                    <li className="pb-10">
-                        <Link href="#" className="t-footer">
-                            Track Order
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="t-footer">
-                            Returns 
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="t-footer">
-                            Shipping
-                        </Link>
-                    </li>
-
-                    <li className="pb-10">
-                        <Link href="#" className="t-footer">
-                            FAQs
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-
-            <div className="col-sm-6 col-lg-3 m-footer">
-                <h4 className="s-footer">
-                    GET IN TOUCH
-                </h4>
-
-                <p className="A-footer">
-                    Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-                </p>
-
-                <div className="pt-20">
-                    <Link href="#" className="fab">
-                        <i className="fa-brands fa-facebook-f"></i>
-                    </Link>
-
-                    <Link href="#" className="fab">
-                        <i className="fa-brands fa-instagram"></i>
-                    </Link>
-
-                    <Link href="#" className="fab">
-                        <i className="fa-brands fa-pinterest-p"></i>
-                    </Link>
-                </div>
-            </div>
-
-            <div className="col-sm-6 col-lg-3 m-footer">
-                <h4 className="s-footer">
-                    Newsletter
-                </h4>
-
-                <form>
-                    <div className="sub">
-                        <input className="m-sub" type="text" name="email" placeholder="email@example.com"/>
-                        <div className="focus-input1"></div>
-                    </div>
-
-                    <div className="pt-18">
-                        <button className="bord1">
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div className="p-t-40 ">
-            <div className="flex-c-m flex-w p-b-18 text-center">
-                <Link href="#" className="m-all-1">
-                    <img src={iconpay1} alt=""/>
-                </Link>
-
-                <Link href="#" className="m-all-1">
-                    <img src={iconpay2} alt=""/>
-                </Link>
-
-                <Link href="#" className="m-all-1">
-                    <img src={iconpay3} alt=""/>
-                </Link>
-
-                <Link href="#" className="m-all-1">
-                    <img src={iconpay4} alt=""/>
-                </Link>
-
-                <Link href="#" className="m-all-1">
-                    <img src={iconpay5} alt=""/>
-                </Link>
-            </div>
-
-            <p className="copy text-center">
-                Copyright ©<script>document.write(new Date().getFullYear());</script>2024 All rights reserved | Made with <i className="fa-regular fa-heart"></i>by <Link href="https://colorlib.com" target="_blank">Colorlib</Link> &amp; distributed by <Link href="https://themewagon.com" target="_blank">ThemeWagon</Link>
+    <footer className="ft-footer">
+      <div className="container">
+        <div className="ft-grid">
+          <section className="ft-col ft-brand">
+            <p className="ft-kicker">Coza Store</p>
+            <h3 className="ft-title">Modern pieces, everyday confidence.</h3>
+            <p className="ft-text">
+              Curated collections with premium quality and timeless style for your daily wardrobe.
             </p>
-        </div>
-    </div>
-          <Link id="scrollUp" href="#top" aria-label="Back to top">
-              <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  className="scrollup-icon"
-              >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-              </svg>
-          </Link>
-    </footer>
-  )
-}
+            <div className="ft-social">
+              <a href="https://facebook.com" className="ft-social-link" aria-label="Facebook" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-facebook-f" />
+              </a>
+              <a href="https://instagram.com" className="ft-social-link" aria-label="Instagram" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-instagram" />
+              </a>
+              <a href="https://pinterest.com" className="ft-social-link" aria-label="Pinterest" target="_blank" rel="noreferrer">
+                <i className="fa-brands fa-pinterest-p" />
+              </a>
+            </div>
+          </section>
 
-export default Footer
+          <section className="ft-col">
+            <h4 className="ft-heading">Shop</h4>
+            <ul className="ft-links">
+              <li><Link to="/shop">Women</Link></li>
+              <li><Link to="/shop">Men</Link></li>
+              <li><Link to="/shop">Shoes</Link></li>
+              <li><Link to="/shop">Accessories</Link></li>
+            </ul>
+          </section>
+
+          <section className="ft-col">
+            <h4 className="ft-heading">Support</h4>
+            <ul className="ft-links">
+              <li><Link to="/contact">Track order</Link></li>
+              <li><Link to="/contact">Returns</Link></li>
+              <li><Link to="/contact">Shipping info</Link></li>
+              <li><Link to="/contact">FAQs</Link></li>
+            </ul>
+          </section>
+
+          <section className="ft-col">
+            <h4 className="ft-heading">Newsletter</h4>
+            <p className="ft-text">Get updates on new arrivals and exclusive offers.</p>
+            <form className="ft-form" onSubmit={(e) => e.preventDefault()}>
+              <label htmlFor="footer-email" className="visually-hidden">Email address</label>
+              <input id="footer-email" className="ft-input" type="email" placeholder="email@example.com" />
+              <button className="ft-btn" type="submit">Subscribe</button>
+            </form>
+          </section>
+        </div>
+
+        <div className="ft-bottom">
+          <div className="ft-payments" aria-label="Payment methods">
+            <img src={iconpay1} alt="Payment method 1" />
+            <img src={iconpay2} alt="Payment method 2" />
+            <img src={iconpay3} alt="Payment method 3" />
+            <img src={iconpay4} alt="Payment method 4" />
+            <img src={iconpay5} alt="Payment method 5" />
+          </div>
+          <p className="ft-copy">
+            Copyright {year} Coza Store. Crafted with care for modern shopping.
+          </p>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        id="scrollUp"
+        onClick={scrollPageToTop}
+        aria-label="Back to top"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          className="scrollup-icon"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+      </button>
+    </footer>
+  );
+};
+
+export default Footer;

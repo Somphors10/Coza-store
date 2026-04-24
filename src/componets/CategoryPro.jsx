@@ -15,7 +15,7 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-6">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner1} alt=""/>
-                        <Link href="#" className="ws-18">
+                        <Link to="/shop" className="ws-18">
                             <span className="women">Women</span><br/>
                             <span className="spring">Spring 2018</span>
                         </Link>
@@ -31,7 +31,7 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-6">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner2} alt=""/>
-                        <Link href="#" className="ws-18">
+                        <Link to="/shop" className="ws-18">
                             <span className="women">Men</span><br/>
                             <span className="spring">Spring 2018</span>
                         </Link>
@@ -49,10 +49,10 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-4 ">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner7} alt=""/>
-                        <a href="#" className="ws-18">
+                        <Link to="/shop" className="ws-18">
                             <span className="women">Women</span><br/>
                             <span className="spring">Spring 2018</span>
-                        </a>
+                        </Link>
                         <div className="card-hover">
                             <div className="m-shop">
                                 <div className="shop">
@@ -65,10 +65,10 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-4 ">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner8} alt=""/>
-                        <a href="#" className="ws-18">
+                        <Link to="/shop" className="ws-18">
                             <span className="women">Men</span><br/>
                             <span className="spring">Spring 2018</span>
-                        </a>
+                        </Link>
                         <div className="card-hover">
                             <div className="m-shop">
                                 <div className="shop">
@@ -81,10 +81,10 @@ const CategoryPro = () => {
                 <div className="col-md-6 col-xl-4 ">
                     <div className="card s-card ">
                         <img className="card-img-top" src={banner9} alt=""/>
-                        <a href="#" className="ws-18">
+                        <Link to="/shop" className="ws-18">
                             <span className="women">Accessories</span><br/>
                             <span className="spring">Spring 2018</span>
-                        </a>
+                        </Link>
                         <div className="card-hover">
                             <div className="m-shop">
                                 <div className="shop">

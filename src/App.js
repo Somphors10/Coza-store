@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home1 from './pages/Home1';
@@ -11,6 +11,8 @@ import Feature from './pages/Feature';
 import Blog from './pages/Blog';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Wishlist from './pages/Wishlist';
+import Cart from './pages/Cart';
 import Navbar from './componets/Navbar';
 import Shopblog from './componets/Shopblog';
 import Footer from './componets/Footer';
@@ -28,9 +30,14 @@ import ContactEnd from './componets/ContactEnd';
 import CategoryProduct from './componets/CategoryProduct';
 import CategoryPro from './componets/CategoryPro';
 import { WishlistProvider } from './componets/WishlistProvider';
+import { CartProvider } from './componets/CartProvider';
+import { ThemeProvider } from './componets/ThemeProvider';
+import './theme-overrides.css';
 
 function App() {
   return (
+    <ThemeProvider>
+    <CartProvider>
     <WishlistProvider>
       <BrowserRouter>
         <Routes path="/" element={<Layout />}>
@@ -39,6 +46,8 @@ function App() {
           <Route path="/home2" element={<Home2 />} />
           <Route path="/home3" element={<Home3 />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/feature" element={<Feature />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
@@ -55,13 +64,16 @@ function App() {
           <Route path="/heaerAbout" element={<HeaderAbout />} />
           <Route path="ourBlog" element={<OurBlog />} />
           <Route path="/featureForm" element={<FeatureForm />} />
-          <Route path="/detailBlogCard" element={<DetailBlogCard />} />
+          <Route path="/detailBlogCard" element={<Navigate to="/blog/post/1" replace />} />
+          <Route path="/blog/post/:postId" element={<DetailBlogCard />} />
           <Route path="/contantEnd" element={<ContactEnd />} />
           <Route path="/categoryProduct" element={<CategoryProduct />} />
           <Route path="/categoryPro" element={<CategoryPro />} />
         </Routes>
       </BrowserRouter>
     </WishlistProvider>
+    </CartProvider>
+    </ThemeProvider>
   );
 }
 
